@@ -1,0 +1,64 @@
+{
+  "name": "repo",
+  "version": "1.0.0",
+  "description": "Basic config files for React/TS repo",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amoreena/repo_init_linting.git"
+  },
+  "author": "ME",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amoreena/repo_init_linting/issues"
+  },
+  "homepage": "https://github.com/amoreena/repo_init_linting#readme",
+  "scripts": {
+    "analyze": "BUNDLE_ANALYZE=1 npm run pkg build",
+    "format:css": "npm run lint:css -- --fix",
+    "format:fix": "npm run format:css && npm run format:js && npm run format:prettier",
+    "format:js": "npm run lint:js -- --fix",
+    "format:prettier": "npm run prettier -- --write",
+    "lint:css": "stylelint  \"**/*.scss\"",
+    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:prettier": "prettier \"**/*.js\" \"**/*.jsx\" \"**/*.json\" \"**/*.ts\" \"**/*.tsx\" \"**/*.scss\" --ignore-path .eslintignore --list-different",
+    "lint": "npm run lint:css && npm run lint:js && npm run lint:prettier",
+    "test:update": "npm test -- -u",
+    "test:watch": "npm test -- --watch --onlyChanged",
+    "test": "jest"
+  },
+    "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
+  },
+  "dependencies": {
+    "classnames": "2.2.6"
+  },
+  "devDependencies": {
+    "eslint": "7.8.1",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-import-resolver-custom-alias": "1.2.0",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-jest": "24.0.0",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.20.6",
+    "husky": "4.3.0",
+    "jest": "26.4.2",
+    "lint-staged": "10.3.0",
+    "prettier": "2.1.1",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "stylelint": "13.13.1",
+    "stylelint-config-suitcss": "15.0.0",
+    "stylelint-suitcss": "3.0.0",
+    "webpack-bundle-analyzer": "3.8.0"
+  },
+  "peerDependencies": {
+    "react": "16.6.3",
+    "react-dom": "16.6.3"
+  }
+}
