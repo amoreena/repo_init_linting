@@ -34,6 +34,12 @@
       "html"
     ]
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*": "prettier --ignore-unknown --write --ignore-path .eslintignore",
+    "*.css": "stylelint",
+    "*.scss": "stylelint --syntax=scss"
+  },
   "dependencies": {
     "classnames": "2.2.6"
   },
