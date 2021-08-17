@@ -1,7 +1,6 @@
 module.exports = {
-  "parser": "@babel/eslint-parser",
-  "plugins": ["import", "react", "jsx-a11y"],
-  "extends": [
+  plugins: ['import', 'react', 'jsx-a11y'],
+  extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
@@ -16,42 +15,27 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 6,
   },
-  "rules": {
-    "import/order": ["error", { "newlines-between": "always" }],
-    "prefer-destructuring": "error",
-    "react/prefer-stateless-function": "error",
-    "react/jsx-no-bind": [
-      2,
-      {
-        "ignoreDOMComponents": true,
-        "ignoreRefs": true,
-        "allowArrowFunctions": false,
-        "allowFunctions": true,
-        "allowBind": false
-      }
-    ]
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
+  settings: {
+    react: {
+      version: 'detect',
     },
-    "import/resolver": {
-      "eslint-import-resolver-custom-alias": {
-        "alias": {
-          "styles": "./src/lib/styles",
-          "utils": "./src/lib/utils",
-          "components": "./src/lib/components",
-          "types": "./src/lib/types",
-          "test": "./test"
+    'import/resolver': {
+      'eslint-import-resolver-custom-alias': {
+        alias: {
+          styles: './src/lib/styles',
+          utils: './src/lib/utils',
+          components: './src/lib/components',
+          types: './src/lib/types',
+          test: './test',
         },
-        "extensions": [".js", ".jsx", ".json", ".ts", ".tsx"]
-      }
-    }
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+      },
+    },
   },
-  "env": {
-    "node": true,
-    "es6": true,
-    "jest": true
+  env: {
+    node: true,
+    es6: true,
+    jest: true,
   },
   overrides: [
     {
@@ -82,9 +66,20 @@ module.exports = {
     },
   ],
   rules: {
-    semi: 0,
+    'import/order': ['error', { 'newlines-between': 'always' }],
+    'prefer-destructuring': 'error',
+    'react/prefer-stateless-function': 'error',
+    'react/jsx-no-bind': [
+      2,
+      {
+        ignoreDOMComponents: true,
+        ignoreRefs: true,
+        allowArrowFunctions: false,
+        allowFunctions: true,
+        allowBind: false,
+      },
+    ],
     'space-before-function-paren': 0,
-    'comma-dangle': 0,
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
